@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<div id="map"></div>
+		<div id="pageWrapper" class="hidden">
+			<div id="backgroundWrapper"></div>
+		</div>
+
+		<!-- External libs -->
+		<script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
+		<script src="https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js"></script>
+
+		<!-- Internal files -->
+		<script src="js/datas.js"></script>
+		<script>
+			for (let i = 0; i < Odyssey.totalSteps; i++) {
+				const script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = `js/steps/Step_${i + 1}.js`;
+				document.body.append(script);
+			}
+		</script>	
+		<script type="text/javascript" src="js/events.js"></script>
+
+		<script src="js/class/PageWrapper.js"></script>
+		<script src="js/class/Page.js"></script>
+		<script src="js/class/Story.js"></script>
+		<script src="js/class/Map.js"></script>
+
+		<script>
+			document.onreadystatechange = () => {
+				if (document.readyState == 'complete') {
+					Odyssey.map = new Odyssey.class.Map('map');
+					Odyssey.pageWrapper = new Odyssey.class.PageWrapper('#pageWrapper');
+					Odyssey.initEvents();
+				}
+			};
+		</script>
+	</body>
+</html>
