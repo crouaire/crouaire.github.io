@@ -6,7 +6,7 @@
 		stories: [
 			{ 
 				title: `Suivez ses Thraces`, 
-				text: `Ismaros, ou Ismara, est une cité qui appartient à la région appelée Thrace, située sur trois pays actuels différents : la Grèce, la Bulgarie et la Turquie. N’oublie pas que le “monde grec”, à l’Antiquité, s’étend sur plusieurs pays actuels, tout autour de la mer Méditerranée.`
+				text: `<p>Ismaros, ou Ismara, est une cité qui appartient à la région appelée Thrace, située sur trois pays actuels différents : la Grèce, la Bulgarie et la Turquie. N’oublie pas que le “monde grec”, à l’Antiquité, s’étend sur plusieurs pays actuels, tout autour de la mer Méditerranée.</p>`
 			},
 			{ 
 				title: `Héros de père en fils`, 
