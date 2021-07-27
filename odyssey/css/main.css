@@ -92,6 +92,7 @@ html, body {
 }
 
 .pageContent, .storyContent {
+	overflow: scroll;
 	text-align: center;
 	height: 100vh;
 	position: absolute;
@@ -101,6 +102,10 @@ html, body {
 	-webkit-animation: ease-out;
     -webkit-animation-name: showFromRight;
     -webkit-animation-duration: 1s;
+}
+
+.summary > p, .storyText > p {
+	text-align: justify;
 }
 
 .hideToRight {
@@ -139,12 +144,12 @@ html, body {
 
 #pageWrapper img {
 	max-width: 650px;
-	margin: 10px 25px;
+	width: 100%;
+	margin: 10px auto;
 	box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .2);
 }
 
 .summary, .storyText {
-	text-align: justify;
     max-width: 700px;
     margin: 0 auto;
     line-height: 22px;
