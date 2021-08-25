@@ -19,6 +19,11 @@ h1 {
 	flex: 2;
 }
 
+.difficultyStar {
+	width: 18px;
+	margin: 0 1px -2px 1px;
+}
+
 #verbsList {
 	flex: 1;
 	background-color: #dedede;
@@ -91,6 +96,21 @@ footer {
 	cursor: pointer;
 	border-radius: 20px;
 	color: white;
+}
+
+.entry {
+	display: flex;
+	padding: 5px 20px;
+	cursor: pointer;
+	line-height: 30px;
+}
+
+.entryContent {
+	flex: 1;
+}
+
+.entryContent:hover {
+	font-size: 24px;
 }
 
 .optionChoice.doubleSize {

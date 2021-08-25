@@ -15,7 +15,7 @@ Generator.UIList = class {
 	getDifficultyHtml(difficulty) {
 		let html = '';
 		for (let i = 0; i < difficulty; i++) {
-			html += '*';
+			html += '<img class="difficultyStar" src="img/etoile.png">';
 		}
 		return html;
 	}
@@ -24,10 +24,10 @@ Generator.UIList = class {
 		const div = document.createElement('div');
 		div.classList.add('entry');
 
-		let html = '';
-		if (subject) html += `<p>${subject.text} - `;
-		html += `${verb.text} (${this.getDifficultyHtml(verb.difficulty)})</p>`;
-		html += '<p class="buttonDelete">X</p>';
+		let html = `<div class="entryContent">(${this.getDifficultyHtml(verb.difficulty)}) `;
+		if (subject) html += `${subject.text} - `;
+		html += `${verb.text}</div>`;
+		html += '<div class="buttonDelete">X</div>';
 		div.innerHTML = html;
 
 		return div;
