@@ -15,7 +15,7 @@ Generator.UIList = class {
 	getDifficultyHtml(difficulty) {
 		let html = '';
 		for (let i = 0; i < difficulty; i++) {
-			html += '<img class="difficultyStar" src="img/etoile.png">';
+			html += '<img class="difficultyStar" src="img/etoileBlanche.png">';
 		}
 		return html;
 	}
