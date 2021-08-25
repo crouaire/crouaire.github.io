@@ -2,7 +2,7 @@ Generator.MainApp = class {
 	constructor() {
 		this._UIOptions = new Generator.UIOptions();
 		this._UIList = new Generator.UIList();
-		this._UIOptions.setAddToListCallback(this._UIList.add);
+		this._UIOptions.setAddToListCallback(this._UIList.add.bind(this._UIList));
 	}
 
 	static showActive(element, isActive) {

@@ -33,6 +33,7 @@ Generator.UIOptions = class {
 
 		document.querySelector('#subjectActivate').addEventListener('click', this.onClickSubjectActivate.bind(this));
 		document.querySelector('#generationButton').addEventListener('click', this.onClickGeneration.bind(this));
+		document.querySelector('#customAddButton').addEventListener('click', this.onClickCustomAdd.bind(this));
 	}
 
 	onClickOption(event) {
@@ -57,7 +58,7 @@ Generator.UIOptions = class {
 
 	onClickGeneration() {
 		const verbsPool = Generator.MainApp.getPool(this._verbsOptions, Generator.VERBS);		
-		const randomVerb = Generator.MainApp.getRandom(verbsPool); // TODO
+		const randomVerb = Generator.MainApp.getRandom(verbsPool);
 
 		let randomSubject = null;
 		if (this._useSubject) {
@@ -66,5 +67,26 @@ Generator.UIOptions = class {
 		}
 
 		this._addToListCallback(randomSubject, randomVerb);
+	}
+
+	onClickCustomAdd(event) {
+		const parent = event.target.parentNode;
+		const inputs = parent.querySelectorAll('input');
+
+		let subject = { text: inputs[0].value };
+		if (subject.text.length === 0) subject = null;
+
+		let difficulty = inputs[2].value;
+		difficulty = (difficulty.length > 0 ? parseInt(difficulty, 10) : 1);
+
+		const verb = { text: inputs[1].value, difficulty };
+		if (verb.text.length === 0) return 'WRONG PARAM';
+
+		this._addToListCallback(subject, verb);
+
+		// Clear inputs
+		for (let i = 0; i < inputs.length; i++) {
+			inputs[i].value = '';
+		}
 	}
 };
