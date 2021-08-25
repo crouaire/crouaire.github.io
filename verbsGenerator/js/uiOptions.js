@@ -3,8 +3,6 @@ Generator.UIOptions = class {
 		this._container = document.querySelector('#addVerb');
 
 		this._verbsOptions = {};
-
-		this._useSubject = false;
 		this._subjectsOptions = {};
 
 		const optionContainers = document.querySelectorAll('.optionContainer');
@@ -33,7 +31,6 @@ Generator.UIOptions = class {
 			choice.addEventListener('click', this.onClickOption.bind(this));
 		});
 
-		document.querySelector('#subjectActivate').addEventListener('click', this.onClickSubjectActivate.bind(this));
 		document.querySelector('#generationButton').addEventListener('click', this.onClickGeneration.bind(this));
 		document.querySelector('#customAddButton').addEventListener('click', this.onClickCustomAdd.bind(this));
 	}
@@ -51,19 +48,13 @@ Generator.UIOptions = class {
 		Generator.MainApp.showActive(target, isActive);
 	}
 
-	onClickSubjectActivate(event) {
-		this._useSubject = !this._useSubject;
-
-		document.querySelector('#subjectChoice').classList.toggle('hide');
-		Generator.MainApp.showActive(event.target, this._useSubject);
-	}
-
 	onClickGeneration() {
 		const verbsPool = Generator.MainApp.getPool(this._verbsOptions, Generator.VERBS);		
 		const randomVerb = Generator.MainApp.getRandom(verbsPool);
 
 		let randomSubject = null;
-		if (this._useSubject) {
+		const useSubject = !this._subjectsOptions.type.isEmpty();
+		if (useSubject) {
 			const subjectsPool = Generator.MainApp.getPool(this._subjectsOptions, Generator.SUBJECTS);
 			randomSubject = Generator.MainApp.getRandom(subjectsPool);
 		}
