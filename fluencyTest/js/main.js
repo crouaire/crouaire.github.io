@@ -4,7 +4,7 @@ const MainApp = class {
 	constructor() {}
 
 	static initialize() {
-		const textSelection = new TextSelection('./texts');
+		const textSelection = new TextSelection();
 		textSelection.show();
 	}
 };
@@ -61,8 +61,7 @@ const Parser = class {
 };
 
 const TextSelection = class {
-	constructor(root) {
-		this._root = root;
+	constructor() {
 		this.createView();
 	}
 
