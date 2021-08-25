@@ -9,7 +9,7 @@ h1 {
 }
 
 #container {
-	text-align: justify;
+	text-align: center;
 	width: 100%;
 	display: flex;
 }
@@ -61,6 +61,10 @@ footer {
 
 .active {
 	color: blue;
+}
+
+.optionContainer > p {
+	display: inline;
 }
 
 input[type="checkbox"] {
