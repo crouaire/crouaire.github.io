@@ -15,36 +15,36 @@
 				<div id="generator">
 					<p>Choix du groupe :</p>
 					<div class="optionContainer" data-option-name="group" data-option-pool="verbs">
-						<p class="optionChoice active" data-value="1"><input type="checkbox"/>1<sup>er</sup> groupe<p>
-						<p class="optionChoice" data-value="2"><input type="checkbox"/>2<sup>ème</sup> groupe<p>
-						<p class="optionChoice" data-value="3"><input type="checkbox"/>3<sup>ème</sup> groupe<p>
+						<p class="optionChoice active" data-value="1">1<sup>er</sup> groupe</p>
+						<p class="optionChoice" data-value="2">2<sup>ème</sup> groupe</p>
+						<p class="optionChoice" data-value="3">3<sup>ème</sup> groupe</p>
 					</div>
 					<br/>
-					
-					<div class="optionContainer"  data-option-type="bool" data-option-name="pronominal" data-option-pool="verbs">
-						<p class="optionChoice" data-value="on"><input type="checkbox">Inclure les verbes pronominaux ?</p><p>
+
+					<div class="optionContainer" data-option-type="bool" data-option-name="pronominal" data-option-pool="verbs">
+						<p class="optionChoice doubleSize" data-value="on">Inclure les verbes pronominaux</p>
 					</div>
 					<br/>
 
 					<p>Niveau de difficulté :</p>
 					<div class="optionContainer" data-option-name="difficulty" data-option-pool="verbs">
-						<p class="optionChoice active" data-value="1"><input type="checkbox"/>*<p>
-						<p class="optionChoice" data-value="2"><input type="checkbox"/>**<p>
-						<p class="optionChoice" data-value="3"><input type="checkbox"/>***<p>
+						<p class="optionChoice active" data-value="1">*</p>
+						<p class="optionChoice" data-value="2">**</p>
+						<p class="optionChoice" data-value="3">***</p>
 					</div>
 					<br/>
 
-					<div id="subjectActivate">Ajouter un sujet (optionnel)</div>
+					<p>Type de sujet (optionnel) :</p>
 					<div class="optionContainer" data-option-name="type" data-option-pool="subjects">
-						<p class="optionChoice" data-value="personal"><input type="checkbox"/>Pronom personnel<p>
-						<p class="optionChoice" data-value="undefined"><input type="checkbox"/>Pronom indéfini<p>
-						<p class="optionChoice" data-value="noun"><input type="checkbox"/>Groupe nominal<p>
+						<p class="optionChoice" data-value="personal">Pronom personnel</p>
+						<p class="optionChoice" data-value="undefined">Pronom indéfini</p>
+						<p class="optionChoice" data-value="noun">Groupe nominal</p>
 					</div>
 
-					<div id="generationButton" class="button">Générer</div>
+					<div id="generationButton" class="button">GÉNÉRER</div>
 				</div>
 
-				<hr/>
+				<div id="divider"></div>
 
 				<h2>Ajouter un verbe personnalisé</h2>
 				<div id="customVerb">
@@ -52,7 +52,7 @@
 					<input type="text" placeholder="Verbe à l'infinitif"/>
 					<input type="number" placeholder="Difficulté (optionnel)" max="3" min="1"/>
 
-					<div id="customAddButton" class="button">Ajouter</div>
+					<div id="customAddButton" class="button">AJOUTER</div>
 				</div>
 			</div>
 
