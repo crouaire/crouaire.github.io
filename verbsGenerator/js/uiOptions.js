@@ -1,5 +1,7 @@
 Generator.UIOptions = class {
 	constructor() {
+		this._container = document.querySelector('#addVerb');
+
 		this._verbsOptions = {};
 
 		this._useSubject = false;
@@ -88,5 +90,9 @@ Generator.UIOptions = class {
 		for (let i = 0; i < inputs.length; i++) {
 			inputs[i].value = '';
 		}
+	}
+
+	toggleVisibility() {
+		this._container.classList.toggle('hide');
 	}
 };

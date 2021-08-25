@@ -1,6 +1,7 @@
 Generator.UIList = class {
 	constructor() {
 		this._container = document.querySelector('#verbsList');
+		this._isFullPage = false;
 	}
 	
 	add(subject, verb) {
@@ -30,5 +31,10 @@ Generator.UIList = class {
 		div.innerHTML = html;
 
 		return div;
+	}
+
+	setFullPage() {
+		this._container.classList.toggle('fullPage');
+		this._isFullPage = !this._isFullPage;
 	}
 };

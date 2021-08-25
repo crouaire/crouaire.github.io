@@ -3,6 +3,13 @@ Generator.MainApp = class {
 		this._UIOptions = new Generator.UIOptions();
 		this._UIList = new Generator.UIList();
 		this._UIOptions.setAddToListCallback(this._UIList.add.bind(this._UIList));
+
+		document.querySelector('#showFullPageList').addEventListener('click', this.onShowFullPageList.bind(this));
+	}
+
+	onShowFullPageList(event) {
+		this._UIList.setFullPage();
+		this._UIOptions.toggleVisibility();
 	}
 
 	static showActive(element, isActive) {

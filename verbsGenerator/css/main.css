@@ -10,8 +10,16 @@ h1 {
 
 #container {
 	text-align: justify;
-	width: 800px;
-	margin: 0 auto 60px auto;
+	width: 100%;
+	display: flex;
+}
+
+#addVerb {
+	flex: 3;
+}
+
+#verbsList {
+	flex: 1;
 }
 
 #container > h1 {
