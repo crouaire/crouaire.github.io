@@ -64,7 +64,7 @@ const Parser = class {
 	       
 	       		accept(lines);
 	        };
-	        reader.readAsArrayBuffer(blob);
+	        reader.readAsText(blob);
 		});
 
 	}
