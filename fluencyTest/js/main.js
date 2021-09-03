@@ -74,8 +74,12 @@ const TextSelection = class {
 		input.setAttribute("accept", "text/txt");
 		this._textSelector = input;
 
+		const predefinedChoice = Utils.createP("Le Géant <i>(Texte prédéfini)</i>");
+		this._predefinedChoice = predefinedChoice;
+
 		this._parent.append(text);
 		this._parent.append(input);
+		this._parent.append(predefinedChoice);
 	}
 
 	show() {
@@ -85,11 +89,32 @@ const TextSelection = class {
 
 	addEventListeners() {
 		this._textSelector.addEventListener("change", this.onChangeTextSelector.bind(this));
+		this._predefinedChoice.addEventListener("click", this.onClickPredefinedChoice.bind(this));
+	}
+
+	async onClickPredefinedChoice(e) {
+
+
+		var text = null;
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/leGeant.txt");
+		xhr.responseType = "text";//force the HTTP response, response-type header to be text
+		xhr.onload = function()
+		{
+		    text = xhr.response;//xhr.response is now a blob object
+		    const lines = Parser.parse(text);
+			const fluencyTest = new FluencyTest(lines);
+			fluencyTest.show();
+		}
+		xhr.send();
+
+		
 	}
 
 	async onChangeTextSelector(e) {
 		if (this._textSelector.files.length > 0) {
 			const file = this._textSelector.files[0];	
+			console.log(file);
 			const lines = await Parser.parse(file);
 			const fluencyTest = new FluencyTest(lines);
 			fluencyTest.show();
