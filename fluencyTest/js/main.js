@@ -55,6 +55,20 @@ const Parser = class {
 		});
 	}
 
+	static parseBlob(blob) {
+		return new Promise((accept, reject) => {
+			const reader = new FileReader();
+	        reader.onload = (e) => {
+	            let contents = reader.result;
+	            const lines = Parser.replace(contents);
+	       
+	       		accept(lines);
+	        };
+	        reader.readAsArrayBuffer(blob);
+		});
+
+	}
+
 	static replace(content) {
         content = content.replace(/(\r?\n){3,}/g, '<br><br>\n');
         content = content.replace(/(\r?\n){2}/g, '<br>\n');
@@ -100,8 +114,7 @@ const TextSelection = class {
 		xhr.open("GET", "/fluencyTest/leGeant.txt");
 		xhr.responseType = "blob";//force the HTTP response, response-type header to be text
 		xhr.onload = () => {
-			console.log(xhr);
-		    const lines = Parser.replace(xhr.response);
+			const lines = Parser.parseBlob(xhr.response);
 			const fluencyTest = new FluencyTest(lines);
 			fluencyTest.show();
 		};
@@ -110,8 +123,7 @@ const TextSelection = class {
 
 	async onChangeTextSelector(e) {
 		if (this._textSelector.files.length > 0) {
-			const file = this._textSelector.files[0];	
-			console.log(file);
+			const file = this._textSelector.files[0];
 			const lines = await Parser.parse(file);
 			const fluencyTest = new FluencyTest(lines);
 			fluencyTest.show();
