@@ -25,6 +25,17 @@ span {
 	-ms-user-select: none; /* IE10+ */
 }
 
+.fluencyButton {
+	cursor: pointer;
+	margin-top: 15px;
+	background: #0f4d57;
+	padding: 10px 5px;
+	width: 300px;
+	border-radius: 20px;
+	color: white;
+	text-align: center;
+}
+
 span.wrong {
 	color: red;
 }

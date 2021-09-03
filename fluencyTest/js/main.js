@@ -69,9 +69,10 @@ const TextSelection = class {
 		const input = document.createElement("input");
 		input.setAttribute("type", "file");
 		input.setAttribute("accept", "text/txt");
+		input.classList.add("fluencyButton");
 		this._textSelector = input;
 
-		const predefinedChoice = Utils.createP("Le Géant <i>(Texte prédéfini)</i>");
+		const predefinedChoice = Utils.createP("Le Géant <i>(Texte prédéfini)</i>", "fluencyButton");
 		this._predefinedChoice = predefinedChoice;
 
 		this._parent.append(text);
