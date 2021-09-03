@@ -47,11 +47,8 @@ const Parser = class {
 			const reader = new FileReader();
 	        reader.onload = (e) => {
 	            let contents = reader.result;
-	            console.log(contents);
-	            contents = contents.replace(/(\r?\n){3,}/gm, '<br><br>\n');
-	            console.log(contents);
-        		contents = contents.replace(/(\r?\n){2}/gm, '<br>\n');
-        		console.log(contents);
+	            contents = contents.replace(/(\r?\n){3,}/g, '<br><br>\n');
+        		contents = contents.replace(/(\r?\n){2}/g, '<br>\n');
 
 	            const lines = contents.split('\n');
 	       		accept(lines);
@@ -112,6 +109,7 @@ const TextSelection = class {
 
 	async readFile(file) {
 		const lines = await Parser.parse(file);
+		console.log(lines);
 		const fluencyTest = new FluencyTest(lines);
 		fluencyTest.show();
 	}
