@@ -96,22 +96,16 @@ const TextSelection = class {
 	}
 
 	async onClickPredefinedChoice(e) {
-
-
-		var text = null;
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", "/fluencyTest/leGeant.txt");
 		xhr.responseType = "text";//force the HTTP response, response-type header to be text
-		xhr.onload = function()
-		{
-		    text = xhr.response;//xhr.response is now a blob object
-		    const lines = Parser.replace(text);
+		xhr.onload = () => {
+			console.log(xhr);
+		    const lines = Parser.replace(xhr.response);
 			const fluencyTest = new FluencyTest(lines);
 			fluencyTest.show();
-		}
-		xhr.send();
-
-		
+		};
+		xhr.send();		
 	}
 
 	async onChangeTextSelector(e) {
