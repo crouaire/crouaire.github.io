@@ -59,7 +59,7 @@ const Parser = class {
 		return new Promise((accept, reject) => {
 			const reader = new FileReader();
 	        reader.onload = (e) => {
-	            let contents = reader.result;
+	            let contents = e.srcElement.result;
 	            const lines = Parser.replace(contents);
 	       
 	       		accept(lines);
