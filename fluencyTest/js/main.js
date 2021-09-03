@@ -48,9 +48,9 @@ const Parser = class {
 	        reader.onload = (e) => {
 	            let contents = reader.result;
 	            console.log(contents);
-	            contents = contents.replace(/(\r?\n){3,}/g, '<br><br>\n');
+	            contents = contents.replace(/(\r?\n){3,}/gm, '<br><br>\n');
 	            console.log(contents);
-        		contents = contents.replace(/(\r?\n){2}/g, '<br>\n');
+        		contents = contents.replace(/(\r?\n){2}/gm, '<br>\n');
         		console.log(contents);
 
 	            const lines = contents.split('\n');
