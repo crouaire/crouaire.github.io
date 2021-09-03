@@ -14,6 +14,7 @@ p {
 
 span {
 	padding: 0 5px;
+	display: inline-block;
 	cursor: pointer;
 	line-height: 28px;
 

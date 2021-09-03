@@ -47,10 +47,9 @@ const Parser = class {
 			const reader = new FileReader();
 	        reader.onload = (e) => {
 	            let contents = reader.result;
-	            contents = contents.replace(/(\r?\n){3,}/g, '<br><br>\n');
-        		contents = contents.replace(/(\r?\n){2}/g, '<br>\n');
+	            contents = contents.replace(/\r/g, '');
 
-	            const lines = contents.split('\n');
+	            let lines = contents.split('\n');
 	       		accept(lines);
 	        };
 	        reader.readAsText(file);
@@ -116,8 +115,8 @@ const TextSelection = class {
 };
 
 const FluencyTest = class {
-	constructor(words) {
-		this._words = words;
+	constructor(lines) {
+		this._lines = lines;
 		this._wrongWords = [];
 		this._mode = "reading";
 		this._lastWord = -1;
@@ -130,8 +129,8 @@ const FluencyTest = class {
 		this.lanceChrono();
 	}
 
-	getWords() {
-		return this._words;
+	getLines() {
+		return this._lines;
 	}
 
 	clearChrono(isReset = false) {
@@ -214,7 +213,7 @@ const FluencyTest = class {
 const FluencyTestView = class {
 	constructor(fluencyTest) {
 		this._fluencyTest = fluencyTest;
-		this._words = fluencyTest.getWords();
+		this._lines = fluencyTest.getLines();
 		this.create();
 	}
 
@@ -265,11 +264,19 @@ const FluencyTestView = class {
 
 	createText() {
 		const fragment = new DocumentFragment();
-		for (let i = 0; i < this._words.length; i++) {
-			const span = document.createElement("span");
-			span.innerHTML = this._words[i];
-			span.dataset.id = i;
-			fragment.appendChild(span);
+		let idWord = 0;
+		for (let i = 0; i < this._lines.length; i++) {
+			const content = this._lines[i];
+			let element;
+			if (content.length === 0) {
+				element = document.createElement("br");
+			} else {
+				element = document.createElement("span");
+				element.innerHTML = content;
+				element.dataset.id = idWord++;
+			}
+			
+			fragment.appendChild(element);
 		}
 		return fragment;
 	}
