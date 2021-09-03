@@ -98,7 +98,7 @@ const TextSelection = class {
 	async onClickPredefinedChoice(e) {
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", "/fluencyTest/leGeant.txt");
-		xhr.responseType = "text";//force the HTTP response, response-type header to be text
+		xhr.responseType = "blob";//force the HTTP response, response-type header to be text
 		xhr.onload = () => {
 			console.log(xhr);
 		    const lines = Parser.replace(xhr.response);
