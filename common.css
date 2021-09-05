@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Besley&display=swap');
+
+:root {
+  --light-blue: #30adc1;
+  --dark-blue: #0f4d57;
+  --coral: #e9605a;
+}
+
 body {
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	margin: 0;
 }
 
 h1 {
-	color: #30adc1;
+	color: var(--light-blue);
 }
 
 h2 {
-	color: #0f4d57;
+	color: var(--dark-blue);
 	text-decoration: underline;
 	font-size: 26px;
+}
+
+h3 {
+	color: var(--dark-blue);
 }
 
 dd {
@@ -20,7 +32,7 @@ dd {
 }
 
 a {
-	color: #e9605a;
+	color: var(--coral);
 }
 
 .center {
@@ -30,7 +42,7 @@ a {
 .button {
 	cursor: pointer;
 	margin: 30px auto 0 auto;
-	background: #0f4d57;
+	background: var(--dark-blue);
 	padding: 10px 5px;
 	width: 200px;
 	border-radius: 20px;
@@ -51,5 +63,5 @@ a {
 	margin: 60px auto 20px auto;
 	height: 2px;
 	width: 200px;
-	background-color: #0f4d57;
+	background-color: var(--dark-blue);
 }

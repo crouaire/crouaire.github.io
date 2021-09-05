@@ -1,6 +1,6 @@
 Odyssey.class.Map = class {
 	constructor(id) {
-		this._track = L.polyline(Odyssey.coordsForStep, { color: '#553d34', dashArray: '10, 10' });
+		this._track = L.polyline(Odyssey.coordsForStep, { color: '#0f4d57', dashArray: '10, 10' });
 		const trackBounds = this._track.getBounds();
 
       	this._map = L.map('map', {

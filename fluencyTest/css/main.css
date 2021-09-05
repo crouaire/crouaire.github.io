@@ -28,7 +28,7 @@ span {
 .fluencyButton {
 	cursor: pointer;
 	margin-top: 15px;
-	background: #0f4d57;
+	background: var(--dark-blue);
 	padding: 10px 5px;
 	width: 300px;
 	border-radius: 20px;
@@ -62,7 +62,7 @@ span.end {
 
 #chronoPercent {
 	height: inherit;
-	background: #30adc1;
+	background: var(--light-blue);
 }
 
 #endContainer {
