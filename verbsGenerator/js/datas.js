@@ -24,6 +24,7 @@ Generator.VERBS = [
 	{ text: 'Faire', group: 3, difficulty: 2 },
 	{ text: 'Paraître', group: 3, difficulty: 2 },
 	{ text: 'Être', group: 3, difficulty: 3 },
+	{ text: 'Moudre', group: 3, difficulty: 3 },
 	{ text: 'Se promener', group: 1, difficulty: 1, pronominal: true }
 ];
 
