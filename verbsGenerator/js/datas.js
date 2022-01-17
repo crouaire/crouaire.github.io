@@ -25,7 +25,30 @@ Generator.VERBS = [
 	{ text: 'Paraître', group: 3, difficulty: 2 },
 	{ text: 'Être', group: 3, difficulty: 3 },
 	{ text: 'Moudre', group: 3, difficulty: 3 },
-	{ text: 'Se promener', group: 1, difficulty: 1, pronominal: true }
+	{ text: 'Se promener', group: 1, difficulty: 1, pronominal: true },
+	{ text: 'Rayer', group: 1, difficulty: 3 },
+	{ text: 'plaindre', group: 3, difficulty: 3 },
+	{ text: 'devoir', group: 3, difficulty: 2 },
+	{ text: 'Trahir', group: 2, difficulty: 2 },
+	{ text: 'Jouer', group: 1, difficulty: 1 },
+	{ text: 'Satisfaire', group: 3, difficulty: 2 },
+	{ text: 'Agrandir', group: 2, difficulty: 1 },
+	{ text: 'Résoudre', group: 3, difficulty: 3 },
+	{ text: 'Soigner', group: 1, difficulty: 3 },
+	{ text: 'Ennuyer', group: 1, difficulty: 3 },
+	{ text: 'Interpeller', group: 1, difficulty: 3 },
+	{ text: 'Mordre', group: 3, difficulty: 3 },
+	{ text: 'Se mouvoir', group: 3, difficulty: 3, pronominal: true },
+	{ text: 'paître', group: 3, difficulty: 3 },
+	{ text: 'Valoir', group: 3, difficulty: 3 },
+	{ text: 'déguster', group: 1, difficulty: 1 },
+	{ text: 'finir', group: 2, difficulty: 1 },
+	{ text: 'Déconstruire', group: 3, difficulty: 2 },
+	{ text: 'Vêtir', group: 3, difficulty: 3 },
+	{ text: 'bâtir', group: 2, difficulty: 2 },
+	
+	
+	
 ];
 
 /*
