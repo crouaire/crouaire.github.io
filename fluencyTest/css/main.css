@@ -1,6 +1,6 @@
 #container {
 	text-align: justify;
-	width: 800px;
+	width: 95vw;
 	margin: 0 auto 60px auto;
 }
 
@@ -45,7 +45,6 @@ span.end {
 }
 
 #textContainer {
-	margin-top: 25px;
 	border: 1px solid;
 	padding: 5px;
 }
@@ -71,4 +70,35 @@ span.end {
 
 .button {
 	width: 300px;
+	margin-top: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+#textSelection {
+	width: 750px;
+	margin: auto;
+}
+
+#fluencyTest {
+	display: flex;
+	gap: 1em;
+}
+
+#fluencyTest.hidden {
+	display: none;
+}
+
+.material-symbols-outlined {
+	vertical-align: text-bottom;
+}
+
+hr {
+	margin: 1em 0;
+}
+
+#rules {
+	margin-top: 1em;
 }

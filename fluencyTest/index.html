@@ -6,13 +6,75 @@
 		<link rel="shortcut icon" type="image/jpg" href="../img/favicon.png"/>
 		<link rel="stylesheet" href="../common.css">
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 	</head>
 
 	<body>
 		<h2>Test de Fluence</h2>
 		<div id="container">
+			<div id="textSelection">
+				<p>Veuillez choisir le texte que vous souhaitez utiliser pour le test <i>(seuls les fichiers .txt sont autorisés)</i> :</p>
+				<input class="customChoice fluencyButton" type="file" accept="text/txt">
+				<p class="predefinedChoice fluencyButton">Le Géant <i>(Texte prédéfini)</i></p>
+			</div>
+
+			<div id="fluencyTest" class="hidden">
+				<div class="leftContainer">
+					<div id="textContainer">
+					</div>
+				</div>
+				<div class="rightContainer">
+					<div id="chronoContainer">
+						<div id="chronoText">0</div>
+						<div id="chronoBox">
+							<div id="chronoPercent" style="width: 0%;"></div>
+						</div>
+					</div>
+
+					<hr/>
+					<div id="startButton" class="button">
+						<span class="material-symbols-outlined">
+							play_arrow
+						</span>
+						Démarrer le test
+					</div>
+					<div id="endButton" class="hidden button">
+						<span class="material-symbols-outlined">
+							check
+						</span>
+						Terminer le test
+					</div>
+					<div id="editButton" class="hidden button">
+						<span class="material-symbols-outlined">
+							edit_note
+						</span>
+						Modifier les fautes
+					</div>
+					<p id="rules" class="italic">Cliquer sur le bouton pour démarrer le test.</p>
+
+					<hr/>
+					<p class="bold">
+						<span class="material-symbols-outlined">
+							star
+						</span>
+						Résultats</p>
+					<div id="resultContainer">Test en cours...</div>
+
+					<hr/>
+					<div id="resetButton" class="button">
+						<span class="material-symbols-outlined">
+							refresh
+						</span>
+						Lancer un nouveau test
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 
+	<script src="js/Parser.js"></script>
+	<script src="js/TextSelection.js"></script>
+	<script src="js/FluencyTest.js"></script>
+	<script src="js/FluencyTestView.js"></script>
 	<script src="js/main.js"></script>
 </html>
